@@ -1,9 +1,25 @@
-import React from 'react';
+import React from "react";
 
-const OperatorButton = ({name}) => {
-    return (
-        <button className="operatorButton">{name}</button>
-    );
-};
+export default function OperatorButton({ name, color }) {
 
-export default OperatorButton;
+  const style = {
+    orange: {
+      backgroundColor: "#ff9d00",
+      color: "#ffffff",
+      border: "1px solid #ff9d00",
+      fontSize: "40px",
+      borderRadius: "50%",
+    },
+    lightgrey: {
+      backgroundColor: "#cccccc",
+      border: "1px solid #cccccc",
+      fontSize: "40px",
+      borderRadius: "50%",
+    },
+  };
+
+  let theStyle = style.lightgrey;
+  if(color === 'orange') theStyle = style.orange
+
+  return <button style={theStyle} className="operatorButton">{name}</button>;
+}
