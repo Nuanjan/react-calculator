@@ -2,7 +2,7 @@ import React from 'react';
 
 
 
-export default function NumberButton({ name, areaName }) {
+export default function NumberButton({ name, areaName, onClickNumber }) {
   const style = {
     default: {
       gridArea: areaName,
@@ -26,7 +26,7 @@ export default function NumberButton({ name, areaName }) {
   console.log("areaName", `areaName`);
 
   return (
-    <button style={theStyle} className="numButton">
+    <button style={theStyle} className="numButton" onClick={() => onClickNumber(name)}>
       {name}
     </button>
   );
